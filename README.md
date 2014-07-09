@@ -1,4 +1,4 @@
-# H1 RANCIDでYAMAHAルーターのコンフィグを管理
+# RANCIDでYAMAHAルーターのコンフィグを管理
 
 1.概要  
 OSSプロダクトであるRANCID(Really Awesome New Cisco config Fiffer)を使って、  

@@ -1,0 +1,15 @@
+Alias /viewvc /usr/lib/python2.6/site-packages/viewvc/bin/mod_python/viewvc-mp.py
+Alias /viewvc-static /usr/share/viewvc/templates/docroot
+
+<Directory /usr/lib/python2.6/site-packages/viewvc/bin/mod_python>
+    AddHandler python-program .py
+    PythonHandler handler
+    Order allow,deny
+    Allow from <%= node['rancid']['fromip'] %>
+</Directory>
+
+<Directory /usr/share/viewvc/templates/docroot>
+    Options -Indexes
+    Order allow,deny
+    Allow from <%= node['rancid']['fromip'] %>
+</Directory>

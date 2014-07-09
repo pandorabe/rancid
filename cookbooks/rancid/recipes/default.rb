@@ -19,14 +19,6 @@ template "rancid.conf" do
   mode 0644
 end
 
-template "rancid-fe" do
-  path "/usr/libexec/rancid/rancid-fe"
-  source "rancid-fe.erb"
-  owner "root"
-  group "root"
-  mode 0755
-end
-
 template "httpd.viewvc.conf" do
   path "/etc/httpd/conf.d/viewvc.conf"
   source "httpd.viewvc.conf.erb"
@@ -70,6 +62,13 @@ end
 
 cookbook_file "/usr/libexec/rancid/ylogin" do
   source "ylogin"
+  owner "root"
+  group "root"
+  mode "0755"
+end
+
+cookbook_file "/usr/libexec/rancid/rancid-fe" do
+  source "rancid-fe"
   owner "root"
   group "root"
   mode "0755"
